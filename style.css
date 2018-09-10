@@ -1,0 +1,47 @@
+body {
+    height:100vh;
+}
+
+
+
+#navBar {
+    height: 15vh;
+    background-color:rgba(173, 36, 36, 0.63);
+       
+}
+
+#welcome-section {
+    height: 30vh;
+    text-align:center;
+    padding-bottom:10px;
+    border: 2px ridge rgba(121, 121, 121, 0.5);
+    
+}
+
+#questions-section {
+    height: 45vh;
+    border: 2px ridge rgba(121, 121, 121, 0.5);
+    text-align: center;
+    padding:10px;
+}
+
+#footer {
+    height: 10vh;
+}
+
+
+.question {
+    font-style:italic;
+    font-size: 1.2em;
+
+}
+.AKC-link {
+    padding-top:20px;
+}
+
+
+h1 {
+    font-size:3em;
+}
+
+
