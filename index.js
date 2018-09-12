@@ -49,17 +49,33 @@ var allAnswers = [answerQ1, answerQ2, answerQ3, answerQ4]
 // insert question into UI
 // ********************************* section im working on
 var question = 0;
-document.getElementById("question-text").textContent = allQuestions[question];
 
-// insert answer options into UI
-document.getElementById("label1").textContent = allAnswers[question][0];
-document.getElementById('label2').textContent = allAnswers[question][1];
-document.getElementById('label3').textContent = allAnswers[question][2];
+document.getElementById('submit-button').onclick = function(){
+    if(question < allQuestions.length) {question++;
 
+        document.getElementById("question-text").textContent = allQuestions[question];
 
+        // insert answer options into UI
+        document.getElementById("label1").textContent = allAnswers[question][0];
+        document.getElementById('label2').textContent = allAnswers[question][1];
+        document.getElementById('label3').textContent = allAnswers[question][2];
+        
+}
+}
+
+  
+ //    document.getElementById("question-text").textContent = allQuestions[question];
+
+    // insert answer options into UI
+//    document.getElementById("label1").textContent = allAnswers[question][0];
+//    document.getElementById('label2').textContent = allAnswers[question][1];
+//    document.getElementById('label3').textContent = allAnswers[question][2];
+    
+
+    
 //when  question is answered remove dogs from array that dont suit answer given
 
-//move onto next questions
+//move onto next questions when button is pressed
 
 // continue to remove dogs until all questions are asked
 
