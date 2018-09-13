@@ -48,12 +48,25 @@ h1 {
 }
 
 #submit-button {
-    padding:5px;
+    padding:2px;
     margin-bottom:10px;
+    margin-top:20px;
+    position:relative;
+    left:40px;
 }
 
 #submit-button:hover{
-    background-color:red;
+    background-color:rgba(59, 123, 182, 0.788);
+}
+#submit-button:active {
+    background-color: rgba(37, 80, 121, 0.788);
+    box-shadow: 0 5px #666
 }
 
+#restart-button {
+    position: absolute;
+    bottom:50px;
+    right:50px;
+
+}
 
