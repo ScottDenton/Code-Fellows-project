@@ -51,29 +51,44 @@ var allAnswers = [answerQ1, answerQ2, answerQ3, answerQ4]
 var question = 0;
 
 var questionText = document.getElementById("question-text").textContent;
+var nextButton = document.getElementById('next-button');
+var questionText =  document.getElementById("question-text");
+var label1 = document.getElementById('label1');
+var label2 = document.getElementById('label2');
+var label3 = document.getElementById('label3');
+var restartButton = document.getElementById('restart-button');
 
-document.getElementById('submit-button').onclick = function(){
+
+    nextButton.addEventListener ('click', function(){
     if(question < allQuestions.length-1) {question++;
         
 
-        document.getElementById("question-text").textContent = allQuestions[question];
+        questionText.textContent = allQuestions[question];
 
         // insert answer options into UI
-        document.getElementById("label1").textContent = allAnswers[question][0];
-        document.getElementById('label2').textContent = allAnswers[question][1];
-        document.getElementById('label3').textContent = allAnswers[question][2];
-        
-        document.getElementById('restart-button').onclick = function(){
-            question = 0;
-            document.getElementById("question-text").textContent = allQuestions[0];
-            
-           document.getElementById("label1").textContent = allAnswers[0][0];
-            document.getElementById('label2').textContent = allAnswers[0][1];
-            document.getElementById('label3').textContent = allAnswers[0][2];
-        }
-    }
-}
+        label1.textContent = allAnswers[question][0];
+        label2.textContent = allAnswers[question][1];
+        label3.textContent = allAnswers[question][2];
 
+        if(question === 3) {
+            nextButton.textContent = "Submit";
+            nextButton.style.backgroundColor = 'rgba(255,30,45,0.5)';
+       }
+        
+        //restart button and reseting questions
+        restartButton.addEventListener('click',function(){
+            question = 0;
+            questionText.textContent = allQuestions[0];
+            label1.textContent = allAnswers[0][0];
+            label2.textContent = allAnswers[0][1];
+            label3.textContent = allAnswers[0][2];
+            nextButton.textContent = "Next";
+        } )
+    }
+   })
+
+
+ 
   
  
 
