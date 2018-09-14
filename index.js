@@ -66,7 +66,8 @@ function restart(){
 }
 
 function displayDog(){
-    mainDisplay.innerHTML = '<img class ="finalDogPic" src = "https://i.imgur.com/Pc97aRj.jpg">'
+    mainDisplay.innerHTML = '<img class ="finalDogPic" src = "https://i.imgur.com/Pc97aRj.jpg">';
+    restartButton.addEventListener('click',restart)
 }
 
 // Next button and question/answer cycling
@@ -83,6 +84,7 @@ function displayDog(){
             nextButton.innerHTML = '<input id ="submit-button" type="button" value ="Submit" onclick = "displayDog();">'
             nextButton.style.backgroundColor = 'rgba(255,30,45,0.5)';
        }
+       /************ RESTART BUTTON NEEDS TO REPLACE THE HTML BACK TO NORMAL */
         
         //restart button and reseting questions
         restartButton.addEventListener('click',restart)
