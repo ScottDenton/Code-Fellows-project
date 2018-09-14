@@ -130,9 +130,56 @@ function displayDog(){
                 dogBreeds.splice(index6,1);
                 
        }
+      
    }
-})
 
+//question 2 ***
+/*
+       if(question===2) {
+    
+       if(answer1Btn.checked ) {
+        var index21 = dogBreeds.indexOf(labrador);
+        dogBreeds.splice(index21, 1);
+        var index22 = dogBreeds.indexOf(germanShepherd);
+        dogBreeds.splice(index22,1);
+        var index32 = dogBreeds.indexOf(bearededCollie);
+        dogBreeds.splice(index32,1);
+       }
+       //moderately
+      else if(answer2Btn.checked) {
+        var index21 = dogBreeds.indexOf(frenchBulldog);
+        dogBreeds.splice(index21, 1);
+        var index22 = dogBreeds.indexOf(germanShepherd);
+        dogBreeds.splice(index22,1);
+        var index32 = dogBreeds.indexOf(pug);
+        dogBreeds.splice(index32,1);
+        var index42 = dogBreeds.indexOf(bearededCollie);
+        dogBreeds.splice(index42,1);
+        var index52 = dogBreeds.indexOf(maltese);
+        dogBreeds.splice(index52,1);
+        var index62 = dogBreeds.indexOf(bulldog);
+        dogBreeds.splice(index62,1);
+           
+       }
+       
+// very active
+       else {
+        var index21 = dogBreeds.indexOf(labrador);
+        dogBreeds.splice(index21, 1);
+        var index22 = dogBreeds.indexOf(frenchBulldog);
+        dogBreeds.splice(index22, 1);
+        var index32 = dogBreeds.indexOf(italianGreyhound);
+        dogBreeds.splice(index32,1);
+        var index42 = dogBreeds.indexOf(pug);
+        dogBreeds.splice(index42,1);
+        var index52 = dogBreeds.indexOf(maltese);
+        dogBreeds.splice(index52,1);
+        var index62 = dogBreeds.indexOf(bulldog);
+        dogBreeds.splice(index62,1);
+       }
+    }
+*/
+    console.log(dogBreeds); 
  
     
       
@@ -143,6 +190,7 @@ function displayDog(){
             nextButton.style.backgroundColor = 'rgba(255,30,45,0.5)';
            
        }
+    })
 
       
        /************ RESTART BUTTON NEEDS TO REPLACE THE HTML BACK TO NORMAL ****************************/
@@ -162,5 +210,3 @@ function displayDog(){
 
 // display the result
 
-console.log(dogBreeds
-    )
