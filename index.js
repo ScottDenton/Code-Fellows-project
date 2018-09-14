@@ -15,11 +15,11 @@ function dog (breed, build, activityLevel, inside, hair) {
 
    var pug = new dog ('Pug', 'small', 'very low', 'inside', 'short')
 
-   var italianGreyhound = new dog ('Italian Greyhound', 'small', 'low', 'inside', 'very short')
+   var italianGreyhound = new dog ('Italian Greyhound', 'small', 'moderate', 'inside', 'very short')
 
    var maltese = new dog ('Maltese', 'small', 'low', 'inside', 'long')
 
-   var bearededCollie = new dog ('Bearded Collie', "medium",'medium', 'inside', 'long' )
+   var bearededCollie = new dog ('Bearded Collie', "medium",'high', 'inside', 'long' )
 
    var bulldog = new dog ("Bulldog", "medium", 'low', 'either', 'short')
 
@@ -60,16 +60,6 @@ var answer1Btn = document.getElementById('answer1');
 var answer2Btn = document.getElementById('answer2');
 var answer3Btn = document.getElementById('answer3');
 
-var indexLab = dogBreeds.indexOf(labrador);
-var indexFrench = dogBreeds.indexOf(frenchBulldog);
-var indexGerman = dogBreeds.indexOf(germanShepherd);
-var indexPug = dogBreeds.indexOf(pug);
-var indexItalian = dogBreeds.indexOf(italianGreyhound);
-var indexMaltese = dogBreeds.indexOf(maltese);
-var indexBearded = dogBreeds.indexOf(bearededCollie);
-var indexBulldog = dogBreeds.indexOf(bulldog);
-
-
 function restart(){
     question = 0;
     questionText.textContent = allQuestions[0];
@@ -78,6 +68,7 @@ function restart(){
     label3.textContent = allAnswers[0][2];
     nextButton.textContent = "Next";
     nextButton.style.backgroundColor = 'rgba(5, 103, 148, 0.5)';
+    dogBreeds = [labrador, frenchBulldog, germanShepherd, pug, italianGreyhound, maltese, bearededCollie, bulldog];
 }
 
 function displayDog(){
@@ -98,7 +89,7 @@ function displayDog(){
     }
 //**********when  question is answered remove dogs from array that dont suit answer given**********
         //Question 1 options
-        if(question === 1){
+       if(question === 1){
         if(answer1Btn.checked){
             var index = dogBreeds.indexOf(labrador);
             dogBreeds.splice(index, 1);
@@ -108,7 +99,7 @@ function displayDog(){
             dogBreeds.splice(index3,1);
             var index4 = dogBreeds.indexOf(bulldog);
             dogBreeds.splice(index4,1);
-        } 
+        }
         else if (answer2Btn.checked) {
             var index = dogBreeds.indexOf(labrador);
             dogBreeds.splice(index, 1);
@@ -123,8 +114,8 @@ function displayDog(){
             var index6 = dogBreeds.indexOf(maltese);
             dogBreeds.splice(index6,1);
             
-        }
-            else {
+            
+        } else {
                 var index = dogBreeds.indexOf(frenchBulldog);
                 dogBreeds.splice(index, 1);
                 var index2 = dogBreeds.indexOf(italianGreyhound);
@@ -137,28 +128,14 @@ function displayDog(){
                 dogBreeds.splice(index5,1);
                 var index6 = dogBreeds.indexOf(bulldog);
                 dogBreeds.splice(index6,1);
-       } 
-    }
-
-    /*
-       //question 2 ***
-
-       if(question===2) {
-       //not very 
-       if(answer1Btn.checked ) {
-        var index = dogBreeds.indexOf(labrador);
-        dogBreeds.splice(index, 1);
-        var index2 = dogBreeds.indexOf(germanShepherd);
-        dogBreeds.splice(index2,1);
-        var index3 = dogBreeds.indexOf(bearededCollie);
-        dogBreeds.splice(index3,1);
+                
        }
-       //very active
-      else if(answer3Btn.checked) {
-           
-       }
-    }
-       */
+   }
+})
+
+ 
+    
+      
 
 
         if(question === 3) {
@@ -167,13 +144,13 @@ function displayDog(){
            
        }
 
-       console.log(dogBreeds)
+      
        /************ RESTART BUTTON NEEDS TO REPLACE THE HTML BACK TO NORMAL ****************************/
         
         //restart button and reseting questions
         restartButton.addEventListener('click',restart)
     
-   })
+   
 
 
     
@@ -185,3 +162,5 @@ function displayDog(){
 
 // display the result
 
+console.log(dogBreeds
+    )
