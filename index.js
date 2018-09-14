@@ -44,13 +44,10 @@ var answerQ4 = ["Short", "Medium", "Long"];
 var allQuestions = [question1, question2, question3, question4];
 var allAnswers = [answerQ1, answerQ2, answerQ3, answerQ4]
 
-
-
-// insert question into UI
-
 var question = 0;
 
-var questionText = document.getElementById("question-text").textContent;
+var mainDisplay = document.getElementById("questions-section");
+var questionText = document.getElementById("question-text");
 var nextButton = document.getElementById('next-button');
 var questionText =  document.getElementById("question-text");
 var label1 = document.getElementById('label1');
@@ -58,11 +55,23 @@ var label2 = document.getElementById('label2');
 var label3 = document.getElementById('label3');
 var restartButton = document.getElementById('restart-button');
 
+function restart(){
+    question = 0;
+    questionText.textContent = allQuestions[0];
+    label1.textContent = allAnswers[0][0];
+    label2.textContent = allAnswers[0][1];
+    label3.textContent = allAnswers[0][2];
+    nextButton.textContent = "Next";
+    nextButton.style.backgroundColor = 'rgba(5, 103, 148, 0.5)';
+}
 
+function displayDog(){
+    mainDisplay.innerHTML = '<img class ="finalDogPic" src = "https://i.imgur.com/Pc97aRj.jpg">'
+}
+
+// Next button and question/answer cycling
     nextButton.addEventListener ('click', function(){
     if(question < allQuestions.length-1) {question++;
-        
-
         questionText.textContent = allQuestions[question];
 
         // insert answer options into UI
@@ -71,26 +80,15 @@ var restartButton = document.getElementById('restart-button');
         label3.textContent = allAnswers[question][2];
 
         if(question === 3) {
-            nextButton.textContent = "Submit";
+            nextButton.innerHTML = '<input id ="submit-button" type="button" value ="Submit" onclick = "displayDog();">'
             nextButton.style.backgroundColor = 'rgba(255,30,45,0.5)';
        }
         
         //restart button and reseting questions
-        restartButton.addEventListener('click',function(){
-            question = 0;
-            questionText.textContent = allQuestions[0];
-            label1.textContent = allAnswers[0][0];
-            label2.textContent = allAnswers[0][1];
-            label3.textContent = allAnswers[0][2];
-            nextButton.textContent = "Next";
-        } )
+        restartButton.addEventListener('click',restart)
     }
    })
 
-
- 
-  
- 
 
     
 //when  question is answered remove dogs from array that dont suit answer given

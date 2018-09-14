@@ -48,6 +48,7 @@ h1 {
 }
 
 #next-button {
+    background-color:rgba(5, 103, 148, 0.5);
     padding:2px;
     margin-bottom:10px;
     margin-top:20px;
@@ -68,5 +69,9 @@ h1 {
     bottom:50px;
     right:50px;
 
+}
+
+.finalDogPic {
+    width:300px;
 }
 
