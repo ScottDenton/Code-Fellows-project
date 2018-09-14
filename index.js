@@ -21,9 +21,11 @@ function dog (breed, build, activityLevel, inside, hair) {
 
    var bearededCollie = new dog ('Bearded Collie', "medium",'medium', 'inside', 'long' )
 
+   var bulldog = new dog ("Bulldog", "medium", 'low', 'either', 'short')
+
    
 // Place breeds into an array
-var dogBreeds = [labrador, frenchBulldog, germanShepherd, pug, italianGreyhound, maltese, bearededCollie];
+var dogBreeds = [labrador, frenchBulldog, germanShepherd, pug, italianGreyhound, maltese, bearededCollie, bulldog];
 
 // list out questions and answers
 var question1 = "What size dog would you prefer ?";
@@ -54,6 +56,19 @@ var label1 = document.getElementById('label1');
 var label2 = document.getElementById('label2');
 var label3 = document.getElementById('label3');
 var restartButton = document.getElementById('restart-button');
+var answer1Btn = document.getElementById('answer1');
+var answer2Btn = document.getElementById('answer2');
+var answer3Btn = document.getElementById('answer3');
+
+var indexLab = dogBreeds.indexOf(labrador);
+var indexFrench = dogBreeds.indexOf(frenchBulldog);
+var indexGerman = dogBreeds.indexOf(germanShepherd);
+var indexPug = dogBreeds.indexOf(pug);
+var indexItalian = dogBreeds.indexOf(italianGreyhound);
+var indexMaltese = dogBreeds.indexOf(maltese);
+var indexBearded = dogBreeds.indexOf(bearededCollie);
+var indexBulldog = dogBreeds.indexOf(bulldog);
+
 
 function restart(){
     question = 0;
@@ -67,33 +82,94 @@ function restart(){
 
 function displayDog(){
     mainDisplay.innerHTML = '<img class ="finalDogPic" src = "https://i.imgur.com/Pc97aRj.jpg">';
-    restartButton.addEventListener('click',restart)
+    
 }
 
 // Next button and question/answer cycling
     nextButton.addEventListener ('click', function(){
     if(question < allQuestions.length-1) {question++;
+
         questionText.textContent = allQuestions[question];
 
         // insert answer options into UI
         label1.textContent = allAnswers[question][0];
         label2.textContent = allAnswers[question][1];
         label3.textContent = allAnswers[question][2];
+    }
+//**********when  question is answered remove dogs from array that dont suit answer given**********
+        //Question 1 options
+        if(question === 1 && answer1Btn.checked){
+            var index = dogBreeds.indexOf(labrador);
+            dogBreeds.splice(index, 1);
+            var index2 = dogBreeds.indexOf(germanShepherd);
+            dogBreeds.splice(index2,1);
+            var index3 = dogBreeds.indexOf(bearededCollie);
+            dogBreeds.splice(index3,1);
+            var index4 = dogBreeds.indexOf(bulldog);
+            dogBreeds.splice(index4,1);
+        } 
+        else if (question === 1 && answer2Btn.checked) {
+            var index = dogBreeds.indexOf(labrador);
+            dogBreeds.splice(index, 1);
+            var index2 = dogBreeds.indexOf(frenchBulldog);
+            dogBreeds.splice(index2,1);
+            var index3 = dogBreeds.indexOf(germanShepherd);
+            dogBreeds.splice(index3,1);
+            var index4 = dogBreeds.indexOf(pug);
+            dogBreeds.splice(index4,1);
+            var index5 = dogBreeds.indexOf(italianGreyhound);
+            dogBreeds.splice(index5,1);
+            var index6 = dogBreeds.indexOf(maltese);
+            dogBreeds.splice(index6,1);
+            
+
+        }
+            else if(question === 1 && answer3Btn.checked){
+                var index = dogBreeds.indexOf(frenchBulldog);
+                dogBreeds.splice(index, 1);
+                var index2 = dogBreeds.indexOf(italianGreyhound);
+                dogBreeds.splice(index2,1);
+                var index3 = dogBreeds.indexOf(pug);
+                dogBreeds.splice(index3,1);
+                var index4 = dogBreeds.indexOf(maltese);
+                dogBreeds.splice(index4,1);
+       } 
+    
+/*
+       //question 2 ***
+       //not very and moderately active
+       if(question ===2 && answer1Btn.checked || answer2Btn.checked) {
+        var index = dogBreeds.indexOf(labrador);
+        dogBreeds.splice(index, 1);
+        var index2 = dogBreeds.indexOf(germanShepherd);
+        dogBreeds.splice(index2,1);
+        var index3 = dogBreeds.indexOf(bearededCollie);
+        dogBreeds.splice(index3,1);
+       }
+       //very active
+       if(question === 2 && answer3Btn.checked) {
+           dogBreeds = [labrador, germanShepherd, bearededCollie]
+       }
+       */
+
 
         if(question === 3) {
             nextButton.innerHTML = '<input id ="submit-button" type="button" value ="Submit" onclick = "displayDog();">'
             nextButton.style.backgroundColor = 'rgba(255,30,45,0.5)';
+           
        }
-       /************ RESTART BUTTON NEEDS TO REPLACE THE HTML BACK TO NORMAL */
+
+       console.log(dogBreeds)
+       /************ RESTART BUTTON NEEDS TO REPLACE THE HTML BACK TO NORMAL ****************************/
         
         //restart button and reseting questions
         restartButton.addEventListener('click',restart)
-    }
+    
    })
 
 
     
-//when  question is answered remove dogs from array that dont suit answer given
+
 
 //move onto next questions when button is pressed
 
