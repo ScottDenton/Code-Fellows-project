@@ -98,7 +98,8 @@ function displayDog(){
     }
 //**********when  question is answered remove dogs from array that dont suit answer given**********
         //Question 1 options
-        if(question === 1 && answer1Btn.checked){
+        if(question === 1){
+        if(answer1Btn.checked){
             var index = dogBreeds.indexOf(labrador);
             dogBreeds.splice(index, 1);
             var index2 = dogBreeds.indexOf(germanShepherd);
@@ -108,7 +109,7 @@ function displayDog(){
             var index4 = dogBreeds.indexOf(bulldog);
             dogBreeds.splice(index4,1);
         } 
-        else if (question === 1 && answer2Btn.checked) {
+        else if (answer2Btn.checked) {
             var index = dogBreeds.indexOf(labrador);
             dogBreeds.splice(index, 1);
             var index2 = dogBreeds.indexOf(frenchBulldog);
@@ -122,9 +123,8 @@ function displayDog(){
             var index6 = dogBreeds.indexOf(maltese);
             dogBreeds.splice(index6,1);
             
-
         }
-            else if(question === 1 && answer3Btn.checked){
+            else {
                 var index = dogBreeds.indexOf(frenchBulldog);
                 dogBreeds.splice(index, 1);
                 var index2 = dogBreeds.indexOf(italianGreyhound);
@@ -133,12 +133,19 @@ function displayDog(){
                 dogBreeds.splice(index3,1);
                 var index4 = dogBreeds.indexOf(maltese);
                 dogBreeds.splice(index4,1);
+                var index5 = dogBreeds.indexOf(bearededCollie);
+                dogBreeds.splice(index5,1);
+                var index6 = dogBreeds.indexOf(bulldog);
+                dogBreeds.splice(index6,1);
        } 
-    
-/*
+    }
+
+    /*
        //question 2 ***
-       //not very and moderately active
-       if(question ===2 && answer1Btn.checked || answer2Btn.checked) {
+
+       if(question===2) {
+       //not very 
+       if(answer1Btn.checked ) {
         var index = dogBreeds.indexOf(labrador);
         dogBreeds.splice(index, 1);
         var index2 = dogBreeds.indexOf(germanShepherd);
@@ -147,9 +154,10 @@ function displayDog(){
         dogBreeds.splice(index3,1);
        }
        //very active
-       if(question === 2 && answer3Btn.checked) {
-           dogBreeds = [labrador, germanShepherd, bearededCollie]
+      else if(answer3Btn.checked) {
+           
        }
+    }
        */
 
 
