@@ -78,15 +78,9 @@ function displayDog(){
 
 // Next button and question/answer cycling
     nextButton.addEventListener ('click', function(){
-    if(question < allQuestions.length-1) {question++;
+    if(question < allQuestions.length-1) {
 
-        questionText.textContent = allQuestions[question];
-
-        // insert answer options into UI
-        label1.textContent = allAnswers[question][0];
-        label2.textContent = allAnswers[question][1];
-        label3.textContent = allAnswers[question][2];
-    }
+           
 //**********when  question is answered remove dogs from array that dont suit answer given**********
         //Question 1 options
        if(question === 1){
@@ -99,6 +93,7 @@ function displayDog(){
             dogBreeds.splice(index3,1);
             var index4 = dogBreeds.indexOf(bulldog);
             dogBreeds.splice(index4,1);
+            
         }
         else if (answer2Btn.checked) {
             var index = dogBreeds.indexOf(labrador);
@@ -132,7 +127,14 @@ function displayDog(){
        }
       
    }
+   question++
+   questionText.textContent = allQuestions[question];
 
+   // insert answer options into UI
+   label1.textContent = allAnswers[question][0];
+   label2.textContent = allAnswers[question][1];
+   label3.textContent = allAnswers[question][2];
+   
 //question 2 ***
 /*
        if(question===2) {
@@ -188,7 +190,7 @@ function displayDog(){
         if(question === 3) {
             nextButton.innerHTML = '<input id ="submit-button" type="button" value ="Submit" onclick = "displayDog();">'
             nextButton.style.backgroundColor = 'rgba(255,30,45,0.5)';
-           
+        }
        }
     })
 
