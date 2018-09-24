@@ -1,2 +1,1 @@
-# Code-Fellows-project
-Code Fellows, entry project for code 301 course
+This is my first solo attempt at making a web app
